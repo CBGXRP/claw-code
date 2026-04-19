@@ -1,0 +1,30 @@
+{
+  "agent": "Claude Code",
+  "version": "2.0",
+  "description": "Project settings for Claude Code project template",
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "LS"
+    ],
+    "deny": [
+      "rm -rf",
+      "DROP TABLE"
+    ]
+  },
+  "hooks": {
+    "preToolUse": [".claude/hooks/pre-commit-check.sh"],
+    "postToolUse": []
+  },
+  "model": {
+    "default": "claude-sonnet-4-6",
+    "fallback": "claude-haiku-4"
+  },
+  "context": {
+    "maxTokens": 200000,
+    "compactionStrategy": "auto"
+  }
+}
